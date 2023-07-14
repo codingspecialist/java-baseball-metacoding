@@ -1,9 +1,8 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import db.DBInit;
 
 public class BaseBallApp {
     public static void main(String[] args) {
-
+        // 1. TearDown
+        DBInit.teardown();
     }
 }
