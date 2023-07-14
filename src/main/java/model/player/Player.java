@@ -1,4 +1,4 @@
-package model;
+package model.player;
 
 import lombok.*;
 
@@ -10,9 +10,10 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Team {
+public class Player {
     private Integer id;
-    private Integer stadiumId;
+    private Integer teamId;
     private String name;
+    private String position;
     private Timestamp createdAt;
 }

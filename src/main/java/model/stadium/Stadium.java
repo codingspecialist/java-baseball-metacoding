@@ -1,4 +1,4 @@
-package model;
+package model.stadium;
 
 import lombok.*;
 
@@ -8,11 +8,9 @@ import java.sql.Timestamp;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-public class OutPlayer {
+@Getter @Setter
+public class Stadium {
     private Integer id;
-    private Integer playerId;
-    private String reason;
+    private String name;
     private Timestamp createdAt;
 }
