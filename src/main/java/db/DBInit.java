@@ -24,7 +24,7 @@ public class DBInit {
         }
     }
 
-    private static String readTeardown(){
+    public static String readTeardown(){
         String sql = "";
         try {
             String filePath = "src/main/resources/teardown.sql";

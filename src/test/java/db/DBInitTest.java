@@ -9,8 +9,7 @@ public class DBInitTest {
 
     @Test
     public void init_test(){
-        DBInit dbInit = new DBInit();
-        String sql = dbInit.readTeardown();
+        String sql = DBInit.readTeardown();
         try {
             Connection connection = DBConnection.getInstance();
             Statement statement = connection.createStatement();
