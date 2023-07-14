@@ -59,10 +59,11 @@ public class OutPlayerDao {
     public int update(OutPlayer entity){
         int row = 0;
         try {
-            String sql = "update out_player set reason = ? where id = ?";
+            String sql = "update out_player set reason = ?, player_id = ? where id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, entity.getReason());
-            pstmt.setInt(2, entity.getId());
+            pstmt.setInt(2, entity.getPlayerId());
+            pstmt.setInt(3, entity.getId());
             row = pstmt.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();

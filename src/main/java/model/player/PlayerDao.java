@@ -61,11 +61,12 @@ public class PlayerDao {
     public int update(Player entity){
         int row = 0;
         try {
-            String sql = "update player set name = ?, position = ? where id = ?";
+            String sql = "update player set name = ?, position = ?, team_id = ? where id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, entity.getName());
             pstmt.setString(2, entity.getPosition());
-            pstmt.setInt(3, entity.getId());
+            pstmt.setInt(3, entity.getTeamId());
+            pstmt.setInt(4, entity.getId());
             row = pstmt.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();

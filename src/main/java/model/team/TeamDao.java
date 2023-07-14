@@ -59,10 +59,11 @@ public class TeamDao {
     public int update(Team entity){
         int row = 0;
         try {
-            String sql = "update team set name = ? where id = ?";
+            String sql = "update team set name = ?, stadium_id = ? where id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, entity.getName());
-            pstmt.setInt(2, entity.getId());
+            pstmt.setInt(2, entity.getStadiumId());
+            pstmt.setInt(3, entity.getId());
             row = pstmt.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
