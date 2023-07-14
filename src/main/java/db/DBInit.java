@@ -35,7 +35,7 @@ public class DBInit {
 
                 if(line == null) break;
 
-                sql = sql + line+" ";
+                sql = sql + line;
             }
         }catch (Exception e){
             e.printStackTrace();
