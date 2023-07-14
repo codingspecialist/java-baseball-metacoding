@@ -69,3 +69,6 @@ INSERT INTO player (team_id, name, position, created_at) VALUES(3, '김인태', 
 INSERT INTO player (team_id, name, position, created_at) VALUES(3, '오재원', '좌익수', NOW());
 INSERT INTO player (team_id, name, position, created_at) VALUES(3, '박건우', '중견수', NOW());
 INSERT INTO player (team_id, name, position, created_at) VALUES(3, '호잉요', '우익수', NOW());
+
+insert into out_player(player_id, reason, created_at) values(8, '도박', now());
+update player set team_id = null where id = 8;

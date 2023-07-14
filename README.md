@@ -46,31 +46,31 @@ UX 사용자 경험을 좋게 해주기
 
 ## 시나리오 데이터 쿼리 만들기
 ```sql
--- 야구장등록?name=창원NC파크
+-- 야구장등록?name=창원NC파크 (완)
 insert into stadium(name, created_at) values('창원NC파크', now());
 
--- 야구장목록
+-- 야구장목록 (완)
 select * from stadium;
 
--- 팀등록?stadiumId=4&name=NC
+-- 팀등록?stadiumId=4&name=NC (완)
 insert into team(stadium_id, name, created_at) values(4, 'NC', now());
 
--- 팀목록
+-- 팀목록 (미완)
 select t.id t_id, s.name s_name, t.name t_name, t.created_at t_created_at 
 from team t inner join stadium s on t.stadium_id = s.id;
 
--- 선수등록?teamId=4&name=심창민&position=투수
+-- 선수등록?teamId=4&name=심창민&position=투수 (완)
 INSERT INTO player (team_id, name, position, created_at) 
 VALUES(4, '심창민', '투수', NOW());
 
--- 선수목록?teamId=1
+-- 선수목록?teamId=1 (미완)
 select * from player where team_id=1;
 
--- 퇴출등록?playerId=8&reason=도박
+-- 퇴출등록?playerId=8&reason=도박 (완)
 insert into out_player(player_id, reason, created_at) values(8, '도박', now());
 update player set team_id = null where id = 8;
 
--- 퇴출목록
+-- 퇴출목록 (미완)
 select 
 p.id p_id, 
 p.name p_name, 
@@ -80,7 +80,7 @@ op.created_at op_created_at
 from player p left outer join out_player op 
 on p.id = op.player_id;
 
--- 포지션별목록
+-- 포지션별목록 (2단계 -미완)
 
 ```
 
